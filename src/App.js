@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React ,{useState} from 'react';
 import './App.css';
+import Tweets from './tweets'
+import Increament from './increment'
+import Classcounter from './classcounter'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ const [isUsers, setUsers] = useState([
+  {name:'', message:'Dy Func tweet'}
+  
+ ])
+
+
+
+  return(
+    <div >
+      <br />
+      <div className='app'>
+    {isUsers.map(isUsers =>(
+      <Tweets name={isUsers.name} message={isUsers.message}/>
+    ))}
+    <Classcounter/>
+      </div>
     </div>
-  );
+    
+  )
+
 }
 
 export default App;
